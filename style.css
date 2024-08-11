@@ -1,0 +1,379 @@
+*{
+    border:0;
+    margin:0;
+    box-sizing: border-box;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    display:grid;
+    grid-template-columns: 1.5fr 4fr 1.5fr;
+    grid-template-rows: 1fr 8fr;
+}
+
+/*************************************header***********************************/
+.header{
+    background: #ffffff;
+    padding: 16px 56px 16px 56px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+
+
+    grid-column: 2/4;
+
+    display:grid;
+    grid-template-rows: repeat(2,1fr);
+    gap:12px;
+}
+
+.header .top,
+.header .bottom{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search{
+    display:flex;
+    gap:20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.search>.icon{
+    background: url(./icons/magnify.svg);
+    background-size: contain;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+input{
+    background: #e2e8f0;
+    height: 30px;
+    width: 40rem;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 1.6rem;
+}
+
+.account{
+    font-weight: bold;
+    font-size: 1.1rem;
+    
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:26px;
+}
+.account>.icon{
+    background: url(./img/images.jpeg);
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.notification{
+    background: url(./icons/bell-outline.svg);
+    background-size: contain;
+    height: 1.5rem;
+    width:1.5rem;
+}
+
+.header>.bottom>.account{
+    display: flex;
+}
+.account>.pfp{
+    background: url(./img/images.jpeg);
+    background-size: contain;
+    height:70px;
+    width:70px;
+    border-radius: 50%;
+}
+.header>.bottom .account p:nth-child(1){
+    font-size: 1rem;
+}
+.header>.bottom .account p:nth-child(2){
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.actions{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.actions button{
+    background: #1992d4;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    padding:10px 30px 10px 30px;
+    border-radius: 30px;
+}
+
+
+
+/************************************sidebar******************************************/
+.sidebar{
+    background: #1992d4;
+    padding: 26px 26px 26px 26px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+
+    grid-column: 1;
+    grid-row: 1/3;
+
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    gap:50px;
+}
+/*top*/
+.sidebar>.top{
+    color:white;
+    font-size: 2rem;
+    font-weight: 700;
+    
+    display:flex;
+    align-items: center;
+}
+.sidebar>.top>.icon{
+    background: url(./icons/view-dashboard.svg);
+    filter: invert(100%) brightness(100%);
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+/*mid*/
+.sidebar>.mid>div,
+.sidebar>.bottom>div{
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 45px;
+    
+    display: flex;
+    align-items: center;
+    gap:24px;
+}
+.mid>div>.icon,
+.bottom>div>.icon{
+    height:25px;
+    width:25px;
+    background-size: contain;
+    filter: invert(100%) brightness(100%);
+}
+.sidebar>.mid,
+.sidebar>.bottom{
+    display:flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+.home>.icon{
+    background: url(./icons/home.svg);
+}
+.profile>.icon{
+    background: url(./icons/card-account-details-outline.svg);
+}
+.messages>.icon{
+    background: url(./icons/message.svg);
+}
+.history>.icon{
+    background: url(./icons/history.svg);
+}
+.tasks>.icon{
+    background: url(./icons/file-multiple.svg);
+}
+.communities>.icon{
+    background: url(./icons/account-multiple.svg);
+}
+
+/*bottom*/
+.settings>.icon{
+background: url(./icons/cog.svg);
+}
+.support>.icon{
+background: url(./icons/help-box.svg);
+}
+.privacy>.icon{
+background: url(./icons/shield-check.svg);
+}
+
+/***********************************content*************************************************/
+.content{
+    background: #e2e8f0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding:26px;
+
+    grid-column: 2;
+    grid-row: 2;
+
+    display:flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cards{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap:26px;
+}
+.card{
+    background: #ffffff;
+    padding:28px 18px 28px 18px;
+    border-left: 10px solid #f0b429;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:0px;
+}
+
+.card p:first-child{
+    font-size: 1.4rem;
+}
+.card p:nth-child(2){
+    font-size:1rem;
+    color: #757575;
+    font-weight: 500;
+}
+.card>.icons{
+    margin-top: 20px;
+    
+    justify-self: flex-end;
+    align-self: flex-end;
+    
+    display: flex;
+    gap:8px;
+}
+.star{
+    background: url(./icons/star-plus-outline.svg);
+    background-size: contain;
+    height:20px;
+    width:20px;
+}
+.view{
+    background: url(./icons/eye-plus-outline.svg);
+    background-size: contain;
+    height:20px;
+    width:20px;
+
+}
+.fork{
+    background: url(./icons/source-fork.svg);
+    background-size: contain;
+    height:20px;
+    width:20px;
+
+}
+
+/*************************************news************************************************/
+.news{
+    background: #e2e8f0;
+    padding:26px;
+
+    grid-column: 3;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-rows: 0.4fr 1fr;
+    row-gap: 36px;
+
+}
+/*announcements*/
+.announcements-container,
+.trending-container{
+    font-size: 1.3rem;
+    font-weight: 600;
+    
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.announcements,
+.trending{
+    background: #ffffff;
+    padding:20px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    display:grid;
+}
+.trending{
+    gap:30px;
+}
+
+.announcements>div{
+    padding:8px;
+}
+
+.announcements>div p:first-child{
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+
+}
+.announcements>div p:last-child{
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #757575;
+}
+
+.announcements div:nth-child(1),
+.announcements div:nth-child(2){
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/*trending*/
+.trending>div{
+    text-align: left;
+
+    display: flex;
+    justify-content:  flex-start;
+    align-items: flex-start;
+    gap:12px;
+}
+
+.trending>div p:last-child{
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #757575;
+}
+.trending>div p:first-child{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.trending div:nth-child(1)>.pfp{
+    background: url(./img/download.jpeg);
+    background-size:contain;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.trending  div:nth-child(2)>.pfp{
+    background: url(./img/images.jpeg);
+    background-size:contain;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.trending  div:nth-child(3)>.pfp{
+    background: url(./img/images\ \(3\).jpeg);
+    background-size:contain;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}.trending div:nth-child(4)>.pfp{
+    background: url(./img/download\ \(2\).jpeg);
+    background-size:contain;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
